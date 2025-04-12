@@ -37,8 +37,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="400dp"
-        android:layout_height="317dp"
+        android:layout_width="401dp"
+        android:layout_height="456dp"
         android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
