@@ -5,15 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.CheckBox;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Register extends AppCompatActivity {
 
-    private EditText editNIM, editNIM2, editNIM3;
-    private Button btnRegister, btnLogin; // Tambahkan btnLogin jika Anda ingin menambahkannya
+    private CheckBox cbSopIga, cbSateKambing, cbDimsumChili, cbEsTeh;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -21,45 +19,44 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Inisialisasi EditText dan Button setelah setContentView
-        editNIM = findViewById(R.id.editNIM);
-        editNIM2 = findViewById(R.id.editNIM2);
-        editNIM3 = findViewById(R.id.editNIM3);
-        btnRegister = findViewById(R.id.btnlogin); // Pastikan ID ini sesuai dengan layout Anda
-        btnLogin = findViewById(R.id.btnlogin); // Tambahkan ID untuk tombol login jika ada
+        // Retrieve intent data (if any)
+        Intent intent = getIntent();
+        String previousData = intent.getStringExtra("key"); // Use the key that was used to pass the data
 
-        // Set listener untuk tombol register
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerUser ();
-            }
-        });
+        // Initialize CheckBoxes
+        cbSopIga = findViewById(R.id.cbSopIga);
+        cbSateKambing = findViewById(R.id.cbSateKambing);
+        cbDimsumChili = findViewById(R.id.cbDimsumChili);
+        cbEsTeh = findViewById(R.id.cbEsTeh);
 
-        // Set listener untuk tombol login
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navigateToLogin();
-            }
-        });
+        // Optional: Display the received data
+        if (previousData != null) {
+            Toast.makeText(this, "Received: " + previousData, Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void registerUser () {
-        String username = editNIM2.getText().toString().trim();
-        String email = editNIM.getText().toString().trim();
-        String password = editNIM3.getText().toString().trim();
+    private void placeOrder() {
+        StringBuilder orderSummary = new StringBuilder("You ordered:\n");
 
-        if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            return;
+        if (cbSopIga.isChecked()) {
+            orderSummary.append("Sop Iga\n");
+        }
+        if (cbSateKambing.isChecked()) {
+            orderSummary.append("Sate Kambing\n");
+        }
+        if (cbDimsumChili.isChecked()) {
+            orderSummary.append("Dimsum Chili Oil\n");
+        }
+        if (cbEsTeh.isChecked()) {
+            orderSummary.append("Es Teh\n");
         }
 
-        Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
-    }
+        if (orderSummary.toString().equals("You ordered:\n")) {
+            Toast.makeText(this, "No items selected!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, orderSummary.toString(), Toast.LENGTH_LONG).show();
 
-    private void navigateToLogin() {
-        Intent intent = new Intent(Register.this, Regist_Login.class);
-        startActivity(intent);
+
+        }
     }
 }

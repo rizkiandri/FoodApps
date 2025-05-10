@@ -13,21 +13,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="284dp"
-        android:text="Enjoy your order"
+        android:text="ENJOY YOUR ORDER"
         android:textColor="#b88917"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Get"
         android:layout_width="358dp"
         android:layout_height="72dp"
         android:backgroundTint="#B88917"
-        android:text="Get Started"
+        android:text="GET STARTED"
         android:textColorLink="#0D0808"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +38,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="401dp"
-        android:layout_height="456dp"
+        android:layout_width="412dp"
+        android:layout_height="470dp"
         android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
