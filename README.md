@@ -48,5 +48,6 @@ Penutup Cerita
 Castle Food bukan sekadar aplikasi pemesanan makanan, tapi pengalaman visual dan rasa. Dari awal Anda membuka aplikasi hingga melihat pesanan terakhir Anda, semuanya dirancang agar memesan makanan jadi mudah, cepat, dan menyenangkan.
 
 ![image alt](https://github.com/rizkiandri/FoodApps/blob/e16fd451ceb463423e0c590aeb61046f54368eb2/Wireframe.jpg)
+![image alt](https://github.com/rizkiandri/FoodApps/blob/617241465652b872211d6478a4f643c78ed58d73/Mockup.png)
 
 
